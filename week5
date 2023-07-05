@@ -1,0 +1,132 @@
+import pandas as pd
+df=pd.read_csv(r"C:/Users/HP/Documents/ML-LAB/diabetes.csv")
+df
+import matplotlib.pyplot as plt
+a = df['Age']
+b = df['BMI']
+
+plt.bar(a,b)
+plt.xlabel('Age')
+plt.ylabel('BMI')
+plt.show()
+df.head()
+import matplotlib.pyplot as plt
+import plotly.express as px
+fig = px.bar(df, x='Glucose', y='Pregnancies', title='Bar Chart')
+fig.show()
+df.info()
+df.describe()
+df.columns
+y=df['Outcome']
+x=df[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']]
+print(y,x)
+from sklearn.model_selection import train_test_split
+df=x_train,x_test,y_train,y_test=train_test_split(x,y,train_size=0.8,random_state=2529)
+df
+x_train.shape,x_test.shape,y_train.shape,y_test.shape
+import LinearRegression
+model= LinearRegression()
+model.fit(x_train,y_train)
+model.fit(x_train,y_train)
+model.predict(x_test)
+model.score(x_test,y_test)
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state=0)
+regressor.fit(x_train, y_train)
+regressor.score(x,y)
+y_pred=model.predict(x_test)
+y_pred
+regressor.score(x,y)
+import matplotlib.pyplot as plt
+
+Age = ['between 18 to 60','above 60']
+count=[736,32]
+fig = plt.figure(figsize =(10, 7))
+plt.pie(count,labels = Age)
+plt.show()
+a = df['Age']
+b = df['BMI']
+
+plt.bar(a,b)
+plt.xlabel('Age')
+plt.ylabel('BMI')
+plt.show()
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='BloodPressure', y='Pregnancies', data=dataset, hue='BloodPressure', palette='Set1')
+plt.xlabel('BloodPressure')
+plt.ylabel('Pregnancies')
+plt.title('check the value')
+plt.grid(True)
+plt.show()
+import matplotlib.pyplot as plt
+plt.figure(figsize=(8, 6))
+plt.plot( dataset['Age'], color='yellow', marker='o', linestyle='-', linewidth=2)
+plt.xlabel('Age')
+plt.ylabel('SkinThickness')
+plt.title('Sales Over Time')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.show()
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(8, 4))
+plt.pie(dataset['Age'], labels=dataset['Insulin'], autopct='%8.5f%%')
+plt.title('Pie Chart')
+plt.show()
+# Paste or type your script code here:
+import matplotlib.pyplot as plt
+a = dataset['Age']
+b = dataset['BMI']
+
+plt.bar(a,b)
+plt.xlabel('Age')
+plt.ylabel('BMI')
+plt.show()
+import matplotlib.pyplot as plt
+dataset.plot(kind='scatter',x='Age',y='BMI')
+plt.show()
+import matplotlib.pyplot as plt
+
+Age = ['between 18 to 60','above 60']
+count=[736,32]
+fig = plt.figure(figsize =(10, 7))
+plt.pie(count,labels = Age)
+plt.show()
+import matplotlib.pyplot as plt
+dataset.plot(kind="bar",x="Age",y="Pregnancies",color="blue")
+plt.show()
+# Paste or type your script code here:
+import matplotlib.pyplot as plt
+import seaborn as sns
+# Heatmap of correlation matrix using Seaborn
+corr_matrix = dataset[['BMI','Age',]].corr()
+plt.figure(figsize=(8, 6))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.grid(True)
+plt.show()
+import matplotlib.pyplot as plt
+import matplotlib as mb
+mb.rcParams['font.size']=8.0
+n=dataset.loc[0:6,'BloodPressure'].tolist()
+n1=dataset.loc[0:6,'BMI'].tolist()
+plt.bar(n,n1,color="blue",width=0.5)
+plt.show()
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(8, 6))
+sns.barplot(x='Age', y='Pregnancies', data=dataset, palette='viridis')
+plt.xlabel('Age')
+plt.ylabel('Pregnancies')
+plt.title('calucate by category of numbers of pregnancies')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.show()
+# Paste or type your script code here:
+import matplotlib.pyplot as plt
+ax=plt.gca()
+dataset.plot(kind='line',x='Age',y='Glucose',color='green')
+plt.show()
+
